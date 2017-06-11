@@ -1,0 +1,39 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        Product List
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><button class="btn btn-primary" type="button" ng-click="model.toggleImage()">Show Image</button></th>
+                    <th>Product</th>
+                    <th>Code</th>
+                    <th>Available</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in model.products">
+                    <td>
+                        <img ng-if="model.showImage" ng-src="{{product.imageUrl}}" title="{{product.productName}}"
+                             style="width:50px;margin:2px" />
+                    </td>
+                    <td>
+                        <a ui-sref="productDetail({productId: product.productId})">
+                            {{product.productName}}
+                        </a>
+                    </td>
+                    <td>{{product.productCode}}</td>
+                    <td>{{product.releaseDate}}</td>
+                    <td>{{product.price | currency: '$' : true:'1.2-2'}}</td>
+                    <td>
+                        <a class="btn btn-primary" ui-sref="productEdit.info({productId: product.productId})">
+                            Edit
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

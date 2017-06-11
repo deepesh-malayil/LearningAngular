@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Learning Angular</title>
+
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-mocks.js"></script>
+    <script src="Scripts/angular-ui-router.js"></script>
+
+    <script src="app/app.js"></script>
+
+    <script src="app/products/productlistcontroller.js"></script>
+    <script src="app/common/commonservices.js"></script>
+    <script src="app/common/productresource.js"></script>
+    <script src="app/common/productresourcemock.js"></script>
+    <script src="app/products/productdetailcontroller.js"></script>
+    <script src="app/products/producteditcontroller.js"></script>
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="app/app.css" rel="stylesheet" />
+</head>
+<body ng-app="productManagement">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <a class="navbar-brand" ui-sref="home">Product Managment</a>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="productList">Product List</a></li>
+                    <li><a ui-sref="productEdit.info({productId:0})"><i class="glyphicon glyphicon-plus"></i>Add Product</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div ui-view></div>
+    </div>
+</body>
+</html>
