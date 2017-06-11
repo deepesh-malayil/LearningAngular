@@ -2,9 +2,9 @@
 
     angular
         .module("productManagement")
-        .controller("ProductEditController", ["product", productEditController]);
+        .controller("ProductEditController", ["product", "$state", productEditController]);
 
-    function productEditController(product) {
+    function productEditController(product, $state) {
         var model = this;
 
         model.product = product;
@@ -14,6 +14,14 @@
         }
         else {
             model.title = "New Product";
+        }
+
+        model.submit = function () {
+            model.product.$save();
+        }
+
+        model.cancel = function () {
+            $state.go("productList");
         }
     }
 

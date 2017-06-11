@@ -1,5 +1,5 @@
 ﻿(function () {
-    var app = angular.module("productManagement", ["commonServices", "ui.router", "productResourceMock"]);
+    var app = angular.module("productManagement", ["commonServices", "ui.router", "ui.mask", "productResourceMock"]);
 
     app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 
